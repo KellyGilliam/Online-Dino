@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+Display only this page
+<button id='clickHere'>Console Log a Greeting!</button>
+</body>
+<script>
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.onreadystatechange = function(req, res) {
+  if (xmlHttp.readyState === 4) {
+    console.log(xmlHttp.responseText);
+  }
+}
+clickHere.onclick = function() {
+  xmlHttp.open('POST','/button', true);
+  xmlHttp.setRequestHeader('Content-type','text');
+  xmlHttp.send('content=hi');
+
+}
+</script>
+</html>
